@@ -1,7 +1,8 @@
 # docker-ngMNO
 Docker-based end-to-end LTE network (NextEPC + srsLTE) with the USRP drivers from the Ettus Research PPA.
+Featuring NextEPC as MME, SGW, PGW and PCRF. From srsLTE the srseNB will be used.
+
 Fork from https://github.com/ravens/docker-nextepc with modifications for USRP support.
-Featuring NextEPC as MME, SGW, PGW and PCRF. From srsLTE the srseNB will be used. 
 
 ## setup 
 
