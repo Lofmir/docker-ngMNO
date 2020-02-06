@@ -1,37 +1,7 @@
 # docker-ngMNO
 Docker-based end-to-end LTE network (NextEPC + srsLTE) with the USRP drivers from the Ettus Research PPA.
 Fork from https://github.com/ravens/docker-nextepc with modifications for USRP support.
-
-# docker-nextepc
-Docker-based LTE environement featuring NextEPC as MME, SGW and PGW, and srsLTE using the FauxRF patch to simulate a UE and an eNB. Also provided, alternate docker-compose for all-in-one EPC kind of node, and physical UE/eNB lab configuration. 
-
-## architecture
-
-```
-                                                  ┌───────────────┐   ┌───────────────┐                           ┌───────────────┐       
-                                                  │               │   │               │                           │               │       
-                                                  │               │   │               │                           │               │       
-                                                  │  MongoDB      │   │  NextEPC HSS  │                           │  NextEPC PCRF │       
-                                                  │               │   │               │                           │               │       
-                                                  │               │   │               │                           │               │       
-                                                  │               │   │               │                           │               │       
-                                                  └─┬─────────────┘   └────┬──────────┘                           └────┬──────────┘       
-             ┌──────────────────┐                   │                      │                                           │                  
-             │shared memory IPC │                   │                      │                                           │                  
-┌────────────┴──┬─────────┬─────┴─────────┐         │   ┌───────────────┐  │┌───────────────┐   ┌───────────────┐      │                  
-│               │         │               │         │   │               │  ││               │   │               │      │                  
-│               │         │               │         │   │               │  ││               │   │               │      │                  
-│  srsUE        │         │  srseNB       ├─────────┼───▶  NextEPC MME  ├──┼▶  NextEPC SGW  │   │  NextEPC PGW  │      │                  
-│               │         │               │         │   │               │  ││               │   │               │      │                  
-│               │         │               │         │   │               │  ││               ├───▶   TUN+NAT     │      │                  
-│      ■━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━╋━━━╋━━━━━━━━━━━━━━━╋━━╋╋━━━━━━━━━━━━━━━╋━━━╋━━━━━━■        │      │                  
-└───────────────┘         └──────┬────────┘         │   └───────┬───────┘  │└───────┬───────┘   └────────┬──────┘      │                  
-                                 │                  │           │          │        │                    │             │                  
-                                 │                  │           │          │        │                    │             │                  
-                                 │                  │           │          │        │                    │             │                  
-                        ─────────▼──────────────────▼───────────▼──────────▼────────▼────────────────────▼─────────────▼─────────────────▶
-                        192.168.26.0/24                                                                                                   
-```
+Featuring NextEPC as MME, SGW, PGW and PCRF. From srsLTE the srseNB will be used. 
 
 ## setup 
 
