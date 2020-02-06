@@ -64,7 +64,7 @@ webui     npm run start --prefix /ne ...   Up      0.0.0.0:3000->3000/tcp
 
 After a while this should settle done and you should see the following kind of output :
 ```
-e               | Found PLMN:  Id=00101, TAC=1
+ue               | Found PLMN:  Id=00101, TAC=1
 ue               | Random Access Transmission: seq=46, ra-rnti=0x2
 enb              | RACH:  tti=631, preamble=46, offset=0, temp_crnti=0x46
 ue               | RRC Connected
