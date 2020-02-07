@@ -4,6 +4,8 @@ Featuring NextEPC as MME, SGW, PGW and PCRF. From srsLTE the srseNB will be used
 
 Fork from https://github.com/ravens/docker-nextepc with modifications for USRP support.
 
+### Work in progress
+
 ## setup 
 
 ```
